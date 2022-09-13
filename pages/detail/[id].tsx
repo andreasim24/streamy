@@ -13,6 +13,7 @@ import { BASE_URL } from "../../utils";
 import useAuthStore from "../../store/authStore";
 import { Video } from "../../types";
 import axios from "axios";
+import LikeButton from "../../components/LikeButton";
 
 interface IProps {
   postDetails: Video;
@@ -139,7 +140,7 @@ const Detail = ({ postDetails }: IProps) => {
               <div className="px-10">
                 <p className=" text-md text-gray-600">{post.caption}</p>
               </div>
-              {/* <div className="mt-10 px-10">
+              <div className="mt-10 px-10">
                 {userProfile && (
                   <LikeButton
                     likes={post.likes}
@@ -149,7 +150,7 @@ const Detail = ({ postDetails }: IProps) => {
                   />
                 )}
               </div>
-              <Comments
+              {/* <Comments
                 comment={comment}
                 setComment={setComment}
                 addComment={addComment}
