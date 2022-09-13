@@ -7,13 +7,12 @@ import { MdOutlineCancel } from "react-icons/md";
 import { BsFillPlayFill } from "react-icons/bs";
 import { HiVolumeUp, HiVolumeOff } from "react-icons/hi";
 
-// import Comments from "../../components/Comments";
+import Comments from "../../components/Comments";
 import { BASE_URL } from "../../utils";
-// import LikeButton from "../../components/LikeButton";
+import LikeButton from "../../components/LikeButton";
 import useAuthStore from "../../store/authStore";
 import { Video } from "../../types";
 import axios from "axios";
-import LikeButton from "../../components/LikeButton";
 
 interface IProps {
   postDetails: Video;
@@ -150,13 +149,13 @@ const Detail = ({ postDetails }: IProps) => {
                   />
                 )}
               </div>
-              {/* <Comments
+              <Comments
                 comment={comment}
                 setComment={setComment}
                 addComment={addComment}
                 comments={post.comments}
                 isPostingComment={isPostingComment}
-              /> */}
+              />
             </div>
           </div>
         </div>
