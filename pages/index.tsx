@@ -4,6 +4,7 @@ import { Video } from "../types";
 import VideoCard from "../components/VideoCard";
 import NoResults from "../components/NoResults";
 import { BASE_URL } from "../utils";
+import Head from "next/head";
 
 /* A type definition for the props that will be passed to the component. */
 interface IProps {
@@ -13,15 +14,21 @@ interface IProps {
 const Home = ({ videos }: IProps) => {
   console.log(videos);
   return (
-    <div className="flex flex-col gap-10 videos h-full ">
-      {videos.length ? (
-        videos?.map((video: Video) => (
-          <VideoCard post={video} isShowingOnHome key={video._id} />
-        ))
-      ) : (
-        <NoResults text={`No Videos`} />
-      )}
-    </div>
+    <>
+      <Head>
+        <title>Streamy</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className="flex flex-col gap-10 videos h-full ">
+        {videos.length ? (
+          videos?.map((video: Video) => (
+            <VideoCard post={video} isShowingOnHome key={video._id} />
+          ))
+        ) : (
+          <NoResults text={`No Videos`} />
+        )}
+      </div>
+    </>
   );
 };
 
