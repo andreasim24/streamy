@@ -12,8 +12,7 @@ This repository is packed with:
 
 # Demo
 
-![streamy](https://user-images.githubusercontent.com/66452311/194393435-a1e89c4d-ffbf-45f1-8c68-24e6f9e28516.png)
-![streamy-2](https://user-images.githubusercontent.com/66452311/194394212-8cf539bc-7854-497f-8b59-3ba62a473def.png)
+![streamy demo](https://user-images.githubusercontent.com/66452311/194396016-594c181a-25ec-4c35-b8d0-d2bb85c5c19e.gif)
 
 ## Deployed
 
