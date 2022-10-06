@@ -102,9 +102,9 @@ const Upload = () => {
                 Post a video to your account
               </p>
             </div>
-            <div className=" border-dashed rounded-xl border-4 border-gray-200 flex flex-col justify-center items-center  outline-none mt-10 w-[260px] h-[458px] p-10 cursor-pointer hover:border-red-300 hover:bg-gray-100">
+            <div className=" border-dashed rounded-xl border-4 border-gray-200 flex flex-col justify-center items-center  outline-none mt-10 w-[260px] h-[458px] p-10 cursor-pointer hover:border-cyan-300 hover:bg-gray-100">
               {loading ? (
-                <p className="text-center text-3xl text-red-400 font-semibold">
+                <p className="text-center text-3xl text-cyan-400 font-semibold">
                   Uploading...
                 </p>
               ) : (
@@ -127,7 +127,7 @@ const Upload = () => {
                           Up to 10 minutes <br />
                           Less than 2 GB
                         </p>
-                        <p className="bg-gradient-to-r from-cyan-500 to-purple-600/80 text-center mt-8 rounded text-white text-md font-medium p-2 w-52 outline-none">
+                        <p className="bg-gradient-to-r from-cyan-500 to-blue-600/80 text-center mt-8 rounded text-white text-md font-medium p-2 w-52 outline-none">
                           Select file
                         </p>
                       </div>
@@ -150,10 +150,10 @@ const Upload = () => {
                         <p className="text-lg">{videoAsset.originalFilename}</p>
                         <button
                           type="button"
-                          className=" rounded-full bg-gray-100 text-gradient-to-r from-cyan-500 to-purple-600/80 px-4 text-xl cursor-pointer outline-none hover:shadow-md hover:shadow-purple-100 transition-all duration-500 ease-in-out"
+                          className=" rounded-full bg-gray-100 text-gradient-to-r from-cyan-500 to-blue-600/80 px-4 text-xl cursor-pointer outline-none hover:shadow-md hover:shadow-blue-100 transition-all duration-500 ease-in-out"
                           onClick={() => setVideoAsset(undefined)}
                         >
-                          <MdDelete className="text-purple-500" />
+                          <MdDelete className="text-blue-500" />
                         </button>
                       </div>
                     </div>
@@ -205,7 +205,7 @@ const Upload = () => {
                 disabled={videoAsset?.url ? false : true}
                 onClick={handlePost}
                 type="button"
-                className="enabled:bg-gradient-to-r from-cyan-500 to-purple-600/80 hover:to-purple-600 text-white text-md font-medium p-2 rounded w-28 lg:w-44 outline-none disabled:bg-gray-300 "
+                className="enabled:bg-gradient-to-r from-cyan-500 to-blue-600/80 hover:to-blue-600 text-white text-md font-medium p-2 rounded w-28 lg:w-44 outline-none disabled:bg-gray-300 "
               >
                 {savingPost ? "Posting..." : "Post"}
               </button>
