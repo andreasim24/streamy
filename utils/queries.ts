@@ -1,4 +1,5 @@
 export const allPostsQuery = () => {
+  // fetch all docs that of type of post and order them by createdAt descending
   const query = `*[_type == "post"] | order(_createdAt desc){
     _id,
      caption,
