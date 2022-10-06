@@ -127,7 +127,7 @@ const Upload = () => {
                           Up to 10 minutes <br />
                           Less than 2 GB
                         </p>
-                        <p className="bg-[#F51997] text-center mt-8 rounded text-white text-md font-medium p-2 w-52 outline-none">
+                        <p className="bg-gradient-to-r from-cyan-500 to-purple-600/80 text-center mt-8 rounded text-white text-md font-medium p-2 w-52 outline-none">
                           Select file
                         </p>
                       </div>
@@ -146,14 +146,14 @@ const Upload = () => {
                         loop
                         src={videoAsset?.url}
                       />
-                      <div className=" flex justify-between gap-20">
+                      <div className=" flex justify-between gap-2">
                         <p className="text-lg">{videoAsset.originalFilename}</p>
                         <button
                           type="button"
-                          className=" rounded-full bg-gray-200 text-red-400 p-2 text-xl cursor-pointer outline-none hover:shadow-md transition-all duration-500 ease-in-out"
+                          className=" rounded-full bg-gray-100 text-gradient-to-r from-cyan-500 to-purple-600/80 px-4 text-xl cursor-pointer outline-none hover:shadow-md hover:shadow-purple-100 transition-all duration-500 ease-in-out"
                           onClick={() => setVideoAsset(undefined)}
                         >
-                          <MdDelete />
+                          <MdDelete className="text-purple-500" />
                         </button>
                       </div>
                     </div>
@@ -205,7 +205,7 @@ const Upload = () => {
                 disabled={videoAsset?.url ? false : true}
                 onClick={handlePost}
                 type="button"
-                className="bg-[#F51997] text-white text-md font-medium p-2 rounded w-28 lg:w-44 outline-none"
+                className="enabled:bg-gradient-to-r from-cyan-500 to-purple-600/80 hover:to-purple-600 text-white text-md font-medium p-2 rounded w-28 lg:w-44 outline-none disabled:bg-gray-300 "
               >
                 {savingPost ? "Posting..." : "Post"}
               </button>
