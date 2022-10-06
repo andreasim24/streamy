@@ -6,6 +6,7 @@ import Link from "next/link";
 import { MdOutlineCancel } from "react-icons/md";
 import { BsFillPlayFill } from "react-icons/bs";
 import { HiVolumeUp, HiVolumeOff } from "react-icons/hi";
+import { RiCloseFill } from "react-icons/ri";
 
 import Comments from "../../components/Comments";
 import { BASE_URL } from "../../utils";
@@ -79,10 +80,10 @@ const Detail = ({ postDetails }: IProps) => {
     <>
       {post && (
         <div className="flex w-full absolute left-0 top-0 bg-white flex-wrap lg:flex-nowrap">
-          <div className="relative flex-2 w-[1000px] lg:w-9/12 flex justify-center items-center bg-blurred-img bg-no-repeat bg-cover bg-center">
+          <div className="relative flex-2 w-[1000px] lg:w-9/12 flex justify-center items-center bg-black bg-center">
             <div className="opacity-90 absolute top-6 left-2 lg:left-6 flex gap-6 z-50">
               <p className="cursor-pointer " onClick={() => router.back()}>
-                <MdOutlineCancel className="text-white text-[35px] hover:opacity-90" />
+                <RiCloseFill className="text-white text-[32px] hover:opacity-90 bg-gray-200/50 hover:bg-gray-300/50 transition-all duration-300 rounded-full" />
               </p>
             </div>
             <div className="relative">
@@ -106,12 +107,18 @@ const Detail = ({ postDetails }: IProps) => {
             </div>
             <div className="absolute bottom-5 lg:bottom-10 right-5 lg:right-10  cursor-pointer">
               {isVideoMuted ? (
-                <button onClick={() => setIsVideoMuted(false)}>
-                  <HiVolumeOff className="text-white text-3xl lg:text-4xl" />
+                <button
+                  className="bg-gray-200/50 rounded-full p-2 hover:bg-gray-300/50  transition-all duration-300"
+                  onClick={() => setIsVideoMuted(false)}
+                >
+                  <HiVolumeOff className="text-white text-xl lg:text-2xl " />
                 </button>
               ) : (
-                <button onClick={() => setIsVideoMuted(true)}>
-                  <HiVolumeUp className="text-white text-3xl lg:text-4xl" />
+                <button
+                  onClick={() => setIsVideoMuted(true)}
+                  className="bg-gray-200/50 rounded-full p-2 hover:bg-gray-300/50  transition-all duration-300"
+                >
+                  <HiVolumeUp className="text-white text-xl lg:text-2xl" />
                 </button>
               )}
             </div>
@@ -121,8 +128,8 @@ const Detail = ({ postDetails }: IProps) => {
               <Link href={`/profile/${post.postedBy._id}`}>
                 <div className="flex gap-4 mb-4 bg-white w-full pl-10 cursor-pointer">
                   <Image
-                    width={60}
-                    height={60}
+                    width={50}
+                    height={50}
                     alt="user-profile"
                     className="rounded-full"
                     src={post.postedBy.image}

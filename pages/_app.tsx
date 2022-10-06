@@ -20,7 +20,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       clientId={`${process.env.NEXT_PUBLIC_GOOGLE_API_TOKEN}`}
     >
       <Navbar />
-      <div className="flex gap-6 md:gap-20">
+      <div className="flex gap-6 md:gap-20 max-w-7xl m-auto">
         <div className="h-[92vh] overflow-hidden xl:hover:overflow-auto">
           <Sidebar />
         </div>

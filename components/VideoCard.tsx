@@ -72,8 +72,8 @@ const VideoCard: NextPage<IProps> = ({
             <Link href={`/profile/${postedBy?._id}`}>
               <>
                 <Image
-                  width={62}
-                  height={62}
+                  width={42}
+                  height={42}
                   className=" rounded-full"
                   src={postedBy?.image}
                   alt="user-profile"
@@ -105,7 +105,7 @@ const VideoCard: NextPage<IProps> = ({
         <div
           onMouseEnter={() => setIsHover(true)}
           onMouseLeave={() => setIsHover(false)}
-          className="rounded-3xl"
+          className="rounded-3xl relative"
         >
           <Link href={`/detail/${_id}`}>
             <video
@@ -117,23 +117,35 @@ const VideoCard: NextPage<IProps> = ({
           </Link>
 
           {isHover && (
-            <div className="absolute bottom-6 cursor-pointer left-8 md:left-14 lg:left-0 flex gap-10 lg:justify-between w-[100px] md:w-[50px] lg:w-[600px] p-3">
+            <div className="absolute bottom-6 cursor-pointer left-8 md:left-14 lg:left-0 flex gap-10 lg:justify-between w-[100px] md:w-[50px] lg:w-[600px] px-6 py-3">
               {playing ? (
-                <button onClick={onVideoPress}>
-                  <BsFillPauseFill className="text-black text-2xl lg:text-4xl" />
+                <button
+                  className="p-2 bg-gray-200/50 shadow-md hover:bg-gray-200/70 duration-200 rounded-xl"
+                  onClick={onVideoPress}
+                >
+                  <BsFillPauseFill className="text-black text-2xl lg:text-2xl" />
                 </button>
               ) : (
-                <button onClick={onVideoPress}>
-                  <BsFillPlayFill className="text-black text-2xl lg:text-4xl" />
+                <button
+                  onClick={onVideoPress}
+                  className="p-2 bg-gray-200/50 shadow-md hover:bg-gray-200/70 duration-200 rounded-xl"
+                >
+                  <BsFillPlayFill className="text-black text-2xl lg:text-2xl" />
                 </button>
               )}
               {isVideoMuted ? (
-                <button onClick={() => setIsVideoMuted(false)}>
-                  <HiVolumeOff className="text-black text-2xl lg:text-4xl" />
+                <button
+                  onClick={() => setIsVideoMuted(false)}
+                  className="p-2 bg-gray-200/50 shadow-md hover:bg-gray-200/70 duration-200 rounded-xl"
+                >
+                  <HiVolumeOff className="text-black text-2xl lg:text-2xl" />
                 </button>
               ) : (
-                <button onClick={() => setIsVideoMuted(true)}>
-                  <HiVolumeUp className="text-black text-2xl lg:text-4xl" />
+                <button
+                  onClick={() => setIsVideoMuted(true)}
+                  className="p-2 bg-slate-200/50 shadow-md hover:bg-slate-200/70 duration-200 rounded-xl"
+                >
+                  <HiVolumeUp className="text-black text-2xl lg:text-2xl" />
                 </button>
               )}
             </div>
